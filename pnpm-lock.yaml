@@ -6,6 +6,7 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   npm-run-all: ^4.1.5
   typescript: ~4.7.4
+  unplugin-auto-import: ^0.9.1
   unplugin-icons: ^0.14.5
   unplugin-vue-components: ^0.20.1
   vite: ^2.9.12
@@ -21,6 +22,7 @@ devDependencies:
   '@vue/tsconfig': registry.npmmirror.com/@vue/tsconfig/0.1.3_@types+node@16.11.41
   npm-run-all: registry.npmmirror.com/npm-run-all/4.1.5
   typescript: registry.npmmirror.com/typescript/4.7.4
+  unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.9.1_vite@2.9.12
   unplugin-icons: registry.npmmirror.com/unplugin-icons/0.14.5_vite@2.9.12
   unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.20.1_vite@2.9.12+vue@3.2.37
   vite: registry.npmmirror.com/vite/2.9.12
@@ -774,6 +776,13 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  registry.npmmirror.com/escape-string-regexp/5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz}
+    name: escape-string-regexp
+    version: 5.0.0
+    engines: {node: '>=12'}
+    dev: true
+
   registry.npmmirror.com/estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz}
     name: estree-walker
@@ -1141,6 +1150,12 @@ packages:
     version: 1.0.2
     dev: true
 
+  registry.npmmirror.com/jsonc-parser/3.0.0:
+    resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jsonc-parser/-/jsonc-parser-3.0.0.tgz}
+    name: jsonc-parser
+    version: 3.0.0
+    dev: true
+
   registry.npmmirror.com/kolorist/1.5.1:
     resolution: {integrity: sha512-lxpCM3HTvquGxKGzHeknB/sUjuVoUElLlfYnXZT73K8geR9jQbroGlSCFBax9/0mpGoD3kzcMLnOlGQPJJNyqQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/kolorist/-/kolorist-1.5.1.tgz}
     name: kolorist
@@ -1243,6 +1258,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: registry.npmmirror.com/brace-expansion/2.0.1
+    dev: true
+
+  registry.npmmirror.com/mlly/0.5.3:
+    resolution: {integrity: sha512-im69tuLD9EJh9fc9TZRpJEFvsBcGMez7glUCWDcHWWCKzhvPmNvyaYjp/+h0qJJN/Xovrs//GzGjOOKmFw4Gog==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mlly/-/mlly-0.5.3.tgz}
+    name: mlly
+    version: 0.5.3
+    dependencies:
+      pathe: registry.npmmirror.com/pathe/0.2.0
+      pkg-types: registry.npmmirror.com/pkg-types/0.3.3
     dev: true
 
   registry.npmmirror.com/ms/2.1.2:
@@ -1407,6 +1431,18 @@ packages:
       pify: registry.npmmirror.com/pify/3.0.0
     dev: true
 
+  registry.npmmirror.com/pathe/0.2.0:
+    resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pathe/-/pathe-0.2.0.tgz}
+    name: pathe
+    version: 0.2.0
+    dev: true
+
+  registry.npmmirror.com/pathe/0.3.0:
+    resolution: {integrity: sha512-3vUjp552BJzCw9vqKsO5sttHkbYqqsZtH0x1PNtItgqx8BXEXzoY1SYRKcL6BTyVh4lGJGLj0tM42elUDMvcYA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pathe/-/pathe-0.3.0.tgz}
+    name: pathe
+    version: 0.3.0
+    dev: true
+
   registry.npmmirror.com/picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/picocolors/-/picocolors-1.0.0.tgz}
     name: picocolors
@@ -1432,6 +1468,16 @@ packages:
     name: pify
     version: 3.0.0
     engines: {node: '>=4'}
+    dev: true
+
+  registry.npmmirror.com/pkg-types/0.3.3:
+    resolution: {integrity: sha512-6AJcCMnjUQPQv/Wk960w0TOmjhdjbeaQJoSKWRQv9N3rgkessCu6J0Ydsog/nw1MbpnxHuPzYbfOn2KmlZO1FA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pkg-types/-/pkg-types-0.3.3.tgz}
+    name: pkg-types
+    version: 0.3.3
+    dependencies:
+      jsonc-parser: registry.npmmirror.com/jsonc-parser/3.0.0
+      mlly: registry.npmmirror.com/mlly/0.5.3
+      pathe: registry.npmmirror.com/pathe/0.3.0
     dev: true
 
   registry.npmmirror.com/postcss/8.4.14:
@@ -1515,6 +1561,12 @@ packages:
     version: 1.2.0
     dependencies:
       queue-microtask: registry.npmmirror.com/queue-microtask/1.2.3
+    dev: true
+
+  registry.npmmirror.com/scule/0.2.1:
+    resolution: {integrity: sha512-M9gnWtn3J0W+UhJOHmBxBTwv8mZCan5i1Himp60t6vvZcor0wr+IM0URKmIglsWJ7bRujNAVVN77fp+uZaWoKg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scule/-/scule-0.2.1.tgz}
+    name: scule
+    version: 0.2.1
     dev: true
 
   registry.npmmirror.com/semver/5.7.1:
@@ -1670,6 +1722,14 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  registry.npmmirror.com/strip-literal/0.4.0:
+    resolution: {integrity: sha512-ql/sBDoJOybTKSIOWrrh8kgUEMjXMwRAkZTD0EwiwxQH/6tTPkZvMIEjp0CRlpi6V5FMiJyvxeRkEi1KrGISoA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/strip-literal/-/strip-literal-0.4.0.tgz}
+    name: strip-literal
+    version: 0.4.0
+    dependencies:
+      acorn: registry.npmmirror.com/acorn/8.7.1
+    dev: true
+
   registry.npmmirror.com/supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/supports-color/-/supports-color-5.5.0.tgz}
     name: supports-color
@@ -1718,6 +1778,54 @@ packages:
       has-bigints: registry.npmmirror.com/has-bigints/1.0.2
       has-symbols: registry.npmmirror.com/has-symbols/1.0.3
       which-boxed-primitive: registry.npmmirror.com/which-boxed-primitive/1.0.2
+    dev: true
+
+  registry.npmmirror.com/unimport/0.4.0_vite@2.9.12:
+    resolution: {integrity: sha512-k2KgvR/rvpmOln5vJtgbikfnntV3nG2F4mRrAI+16cA0KgANaPqHwVrdJijWbW4ZLDmSt0xzCfy4MJt8bMel0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unimport/-/unimport-0.4.0.tgz}
+    id: registry.npmmirror.com/unimport/0.4.0
+    name: unimport
+    version: 0.4.0
+    dependencies:
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      escape-string-regexp: registry.npmmirror.com/escape-string-regexp/5.0.0
+      fast-glob: registry.npmmirror.com/fast-glob/3.2.11
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+      magic-string: registry.npmmirror.com/magic-string/0.26.2
+      mlly: registry.npmmirror.com/mlly/0.5.3
+      pathe: registry.npmmirror.com/pathe/0.3.0
+      scule: registry.npmmirror.com/scule/0.2.1
+      strip-literal: registry.npmmirror.com/strip-literal/0.4.0
+      unplugin: registry.npmmirror.com/unplugin/0.7.0_vite@2.9.12
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin-auto-import/0.9.1_vite@2.9.12:
+    resolution: {integrity: sha512-U2LGVl7nlVIGGV86Gr4x9JS5R2Vag43CGDiOebcCqQ1FPV/r8pdQ9yIZVbBj/v6xk3px/vE1zePC9z/WZgKmXg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-auto-import/-/unplugin-auto-import-0.9.1.tgz}
+    id: registry.npmmirror.com/unplugin-auto-import/0.9.1
+    name: unplugin-auto-import
+    version: 0.9.1
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@vueuse/core': '*'
+    peerDependenciesMeta:
+      '@vueuse/core':
+        optional: true
+    dependencies:
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.5.2
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+      magic-string: registry.npmmirror.com/magic-string/0.26.2
+      unimport: registry.npmmirror.com/unimport/0.4.0_vite@2.9.12
+      unplugin: registry.npmmirror.com/unplugin/0.7.0_vite@2.9.12
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
     dev: true
 
   registry.npmmirror.com/unplugin-icons/0.14.5_vite@2.9.12:
