@@ -1,4 +1,9 @@
 {
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     // 支持jsx语法 才能直接使用 components
@@ -7,6 +12,9 @@
       "~/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": [
+      "vite/client"
+    ]
   }
 }
