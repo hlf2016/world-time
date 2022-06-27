@@ -12,16 +12,16 @@ export default defineConfig({
     Components(),
     AutoImport({
       imports: [
-        'vue'
-      ]
+        'vue',
+      ],
     }),
     UnoCSS({
       presets: [
         presetUno(),
         presetAttributify(),
-        presetIcons()
-      ]
-    })
+        presetIcons(),
+      ],
+    }),
   ],
 
 })

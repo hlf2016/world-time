@@ -1,5 +1,6 @@
 {
   "include": [
+    "auto-imports.d.ts",
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue"
@@ -16,5 +17,9 @@
     "types": [
       "vite/client"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/dist/**"
+  ]
 }
