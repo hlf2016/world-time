@@ -6,6 +6,8 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Hello: typeof import('./src/components/Hello.vue')['default']
+    Timezone: typeof import('./src/components/Timezone.vue')['default']
+    TimezoneSearch: typeof import('./src/components/TimezoneSearch.vue')['default']
   }
 }
 
