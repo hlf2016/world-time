@@ -1,24 +1,9 @@
 <script setup lang="ts">
-import timezoneRaw from 'timezones.json'
 // 前端 搜索库 https://fusejs.io/
 import Fuse from 'fuse.js'
+import { timezone } from './composables/data'
 
-interface Timezone {
-  name: string
-  offset: number
-  isdst: boolean
-}
-
-// 扁平化 处理 timezone 数据 utc 部分
-const timezone = timezoneRaw.flatMap((i) => {
-  return i.utc.map((u) => {
-    return {
-      name: u,
-      offset: i.offset,
-      isdst: i.isdst,
-    } as Timezone
-  })
-})
+import type { Timezone } from './types'
 
 // 实例化一个fuse
 const fuse = new Fuse(timezone, {
