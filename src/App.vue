@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import TimezoneSearch from './components/TimezoneSearch.vue'
-import { zones } from './composables/state'
+
 </script>
 
 <template>
-  <div>
-    <pre>{{ zones }}</pre>
-    <TimezoneSearch />
+  <div border="~ gray/20" m2 p2>
+    <ActionBar />
+    <TimeSchedular />
   </div>
 </template>
 

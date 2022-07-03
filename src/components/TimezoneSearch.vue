@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // 前端 搜索库 https://fusejs.io/
 import Fuse from 'fuse.js'
-import { timezones } from '../composables/data'
-import { addToZones } from '../composables/state'
+import type { Timezone } from '../types'
 
 // 实例化一个fuse
 const fuse = new Fuse(timezones, {
@@ -10,19 +9,27 @@ const fuse = new Fuse(timezones, {
   threshold: 0.3,
 })
 
-const input = ref('')
+let input = $ref('')
+let index = $ref(0)
 
 const searchResults = computed(() => {
-  return fuse.search(input.value)
+  return fuse.search(input)
 })
+
+const add = (timezone: Timezone) => {
+  addToZones(timezone)
+  input = ''
+  index = 0
+}
 </script>
 
 <template>
-  <div>
-    <input v-model="input" type="text">
-    <div>
-      <button v-for="s in searchResults" :key="s.refIndex" flex gap2 @click="addToZones(s.item)">
-        <div font-mono w-10 text-right>
+  <div relative>
+    <input v-model="input" type="text" placeholder="search timezone" px2 py1 border="~ gray/15 rounded" bg-transparent
+      w-full>
+    <div v-show="input" absolute top-full bg-gray-900 left-0 right-0 px3 py2>
+      <button v-for="s in searchResults" :key="s.refIndex" flex gap2 @click="add(s.item)">
+        <div font-mono text-right>
           {{ s.item.offset }}
         </div>
         <div> {{ s.item.name }}</div>
