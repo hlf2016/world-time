@@ -5,7 +5,7 @@ const { modelValue } = defineProps<{
 </script>
 
 <template>
-  <div>
+  <div border="b base" p4>
     <TimezoneSearch />
   </div>
 </template>
