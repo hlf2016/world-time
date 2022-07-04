@@ -23,6 +23,7 @@ export default defineConfig({
       ],
       // 不开启的话 仅可以在 script setup 中 识别自动引入
       // 开启后 template 中的 变量 也会自动引入
+      // 同时 需要配置根目录的 shamefully-hoist=true
       vueTemplate: true,
     }),
     UnoCSS({

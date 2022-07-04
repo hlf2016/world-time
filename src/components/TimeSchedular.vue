@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { zones } from '../composables/state'
 </script>
 
 <template>
-  <div>
+  <div p2>
     <pre>{{ zones }}</pre>
   </div>
 </template>

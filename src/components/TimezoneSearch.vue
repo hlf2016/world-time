@@ -12,7 +12,7 @@ const fuse = new Fuse(timezones, {
 let input = $ref('')
 let index = $ref(0)
 
-const searchResults = computed(() => {
+const searchResults = $computed(() => {
   return fuse.search(input)
 })
 
@@ -21,18 +21,27 @@ const add = (timezone: Timezone) => {
   input = ''
   index = 0
 }
+
+const onKeyDown = (e: KeyboardEvent) => {
+  if (e.key === 'ArrowDown')
+    index = (index + 1) % searchResults.length
+  else if (e.key === 'ArrowUp')
+    // + searchResults.length 是为了 当 在第一个位置 向上翻时 直接到达底部 闭环
+    index = ((index - 1) + searchResults.length) % searchResults.length
+  else if (e.key === 'Enter')
+    add(searchResults[index].item)
+}
 </script>
 
 <template>
   <div relative>
     <input v-model="input" type="text" placeholder="Search timezone" p="x3 y2" text-xl border="~ base rounded"
-      bg-transparent w-full>
-    <div v-show="input" absolute top-full bg-base left-0 right-0 px3 py2>
-      <button v-for="s in searchResults" :key="s.refIndex" flex gap2 @click="add(s.item)">
-        <div font-mono text-right>
-          {{ s.item.offset }}
-        </div>
-        <div> {{ s.item.name }}</div>
+      bg-transparent w-full @keydown="onKeyDown">
+    <div v-show="input" absolute top-full bg-base border="~ base rounded" left-0 right-0 px3 py2 max-h-100
+      overflow-auto>
+      <button v-for="s, idx in searchResults" :key="s.refIndex" block w-full :class="idx === index ? 'bg-gray:20' : ''"
+        @click="add(s.item)">
+        <TimezoneItem :timezone="s.item" />
       </button>
     </div>
   </div>
