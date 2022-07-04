@@ -1,4 +1,7 @@
 import type { Timezone } from '~/types'
+
+export const now = useNow({ interval: 30000 })
+
 // export const zoneNames = $ref<String[]>([])
 // 持久化
 export const zoneNames = $(useStorage<String[]>('world-time-zones', []))
