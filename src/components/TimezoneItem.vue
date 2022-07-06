@@ -15,14 +15,14 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 
 // 分别取出洲和城市
 const state = computed(() => timezone.name.split('/')[0].replace(/_/g, ' '))
-const city = computed(() => timezone.name.split('/')[1].replace(/_/g, ' '))
+const city = computed(() => timezone.name.split('/')[1].replace(/_/g, ' ')) || ''
 
 // 当前时间的时区时间计算
 const time = computed(() => formatter.format(now.value))
 </script>
 
 <template>
-  <div flex gap2 py1>
+  <div flex flex-wrap gap2 py1>
     <div w-8 ma op80 font-bold>
       <div v-if="timezone.name === userTimezone" i-carbon-home />
       <div v-else>
@@ -43,5 +43,6 @@ const time = computed(() => formatter.format(now.value))
     <div ma tabular-nums>
       {{ time }}
     </div>
+    <slot />
   </div>
 </template>

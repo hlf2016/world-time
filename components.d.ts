@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     DarkSwitch: typeof import('./src/components/DarkSwitch.vue')['default']
     Hello: typeof import('./src/components/Hello.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
+    TimeDial: typeof import('./src/components/TimeDial.vue')['default']
     TimeSchedular: typeof import('./src/components/TimeSchedular.vue')['default']
     Timezone: typeof import('./src/components/Timezone.vue')['default']
     TimezoneItem: typeof import('./src/components/TimezoneItem.vue')['default']
