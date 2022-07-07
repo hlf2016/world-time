@@ -32,15 +32,25 @@ const onKeyDown = (e: KeyboardEvent) => {
     // 只有 searchResults[index] 不为空 才能点击触发 add
     add(searchResults[index].item)
 }
+
+// 当点击搜索结果外部空白处时 清空搜索框 隐藏搜索结果
+const model = ref<HTMLDivElement>()
+onClickOutside(model, () => {
+  if (input) {
+    input = ''
+    index = 0
+  }
+})
 </script>
 
 <template>
-  <div relative>
+  <div ref="model" relative>
     <input v-model="input" type="text" placeholder="Search timezone" p="x3 y2" text-xl border="~ base rounded"
       bg-transparent w-full @keydown="onKeyDown">
+    <!-- ref 添加对元素的引用 进而进行控制 -->
     <div v-show="input" absolute top-full bg-base border="~ base rounded" left-0 right-0 max-h-100 overflow-auto z-10
       shadow>
-      <button v-for="s, idx in searchResults" :key="s.refIndex" block w-full px2
+      <button v-for="s, idx in searchResults" :key="s.refIndex" block w-full px2 pb1 hover:bg-gray-5 border="b base"
         :class="idx === index ? 'bg-gray:20' : ''" @click="add(s.item)">
         <TimezoneItem :timezone="s.item" />
       </button>
