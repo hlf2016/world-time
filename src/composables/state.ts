@@ -2,9 +2,32 @@ import type { Timezone } from '~/types'
 
 export const now = useNow({ interval: 30000 })
 
+// 获取当前用户 timezone
+export const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+export interface State {
+  name?: string
+  description?: string
+  zones: string[]
+  homeZone: string
+  date: Date
+  selection: Selection[]
+}
+
+export interface Selection {
+  from: Date
+  to: Date
+}
+
+export const storage = useStorage<State>('world-time-state', {
+  zones: [],
+  homeZone: userTimezone,
+  date: new Date(),
+  selection: [],
+})
+
 // export const zoneNames = $ref<String[]>([])
 // 持久化
-export const zoneNames = $(useStorage<String[]>('world-time-zones', []))
+export const zoneNames = $computed(() => storage.value.zones)
 export const zones = $computed(() => zoneNames.map(name => timezones.find(zone => zone.name === name)))
 
 export const addToZones = (timezone: Timezone) => {
@@ -31,8 +54,9 @@ export const moveZone = (timezone: Timezone, step: 1 | -1) => {
   zoneNames[targetIndex] = timezone.name
   zoneNames[index] = targetName
 }
-// 获取当前用户 timezone
-export const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
+// 获取 当前用户 timezone 的 offset
+export const userTimezoneOffset = computed(() => timezones.find(timezone => timezone.name === storage.value.homeZone).offset)
 
 // 当 zones 为空时设置当前用户 timezone 为 默认值
 if (!zones.length)

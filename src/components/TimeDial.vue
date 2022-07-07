@@ -31,13 +31,14 @@ const isNight = (h: number) => {
 </script>
 
 <template>
-  <div flex="~" gap1 of-auto>
+  <div flex="~" gap1 of-auto items-center>
     <template v-for="day, idx of days" :key="idx">
       <!-- 如果缺少哪个时间段的时间 则不去渲染 -->
       <!-- overflow-hidden 是为了把背景溢出圆角的部分给隐藏掉 否则会显示成直角 -->
-      <div v-if="day.length" flex="~" border="~ sky6/70 rounded">
+      <!-- of-hidden 的同时 flex-none 表示不再挤在一行 可自由滚动 -->
+      <div v-if="day.length" flex="~ none" border="~ sky6/70 rounded" of-hidden>
         <!-- 23 和 0 分别是每天的交界处 -->
-        <div v-for="i in day" :key="i" w7 h8 flex="~ col none" items-center justify-center :class="[
+        <div v-for="i in day" :key="i" w-7 h8 flex="~ col none" items-center justify-center :class="[
           isMidNight(i) ? 'bg-sky6:70 text-white' : isNight(i) ? 'bg-sky:20' : '',
         ]">
           <!-- 用具体的日期 替换 0 更好的视觉 -->
