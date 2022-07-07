@@ -27,7 +27,8 @@ export const storage = useStorage<State>('world-time-state', {
 
 // export const zoneNames = $ref<String[]>([])
 // 持久化
-export const zoneNames = $computed(() => storage.value.zones)
+export const zoneNames = $toRef(storage.value, 'zones')
+export const homeZone = toRef(storage.value, 'homeZone')
 export const zones = $computed(() => zoneNames.map(name => timezones.find(zone => zone.name === name)))
 
 export const addToZones = (timezone: Timezone) => {
@@ -55,8 +56,13 @@ export const moveZone = (timezone: Timezone, step: 1 | -1) => {
   zoneNames[index] = targetName
 }
 
+// 设置 任意 时区为自己的主时区
+export const turnToHomeZone = (timezone: Timezone) => {
+  homeZone.value = timezone.name
+}
+
 // 获取 当前用户 timezone 的 offset
-export const userTimezoneOffset = computed(() => timezones.find(timezone => timezone.name === storage.value.homeZone).offset)
+export const userTimezoneOffset = computed(() => timezones.find(timezone => timezone.name === homeZone.value).offset)
 
 // 当 zones 为空时设置当前用户 timezone 为 默认值
 if (!zones.length)

@@ -30,7 +30,7 @@ const offset = computed(() => {
 <template>
   <div flex flex-wrap gap2 py1>
     <div w-8 ma op80 font-bold :title="`${timezone.offset} GMT`">
-      <div v-if="timezone.name === userTimezone" i-carbon-home />
+      <div v-if="timezone.name === homeZone" i-ri-home-2-fill op-50 />
       <div v-else>
         <!-- {{ timezone.offset > 0 ? `+${timezone.offset}`
             : timezone.offset
