@@ -28,28 +28,31 @@ const offset = computed(() => {
 </script>
 
 <template>
-  <div flex flex-wrap gap3 py1>
-    <div w-8 ma op80 font-bold :title="`${timezone.offset} GMT`">
-      <div v-if="timezone.name === homeZone" i-ri-home-2-fill op-50 />
-      <div v-else text-sky-6>
-        <!-- {{ timezone.offset > 0 ? `+${timezone.offset}`
+  <div flex="~ col md:row" gap3 py1>
+    <div flex="~ wrap" gap3>
+      <div w-8 ma op80 font-bold :title="`${timezone.offset} GMT`">
+        <div v-if="timezone.name === homeZone" i-ri-home-2-fill op-50 />
+        <div v-else text-sky-6>
+          <!-- {{ timezone.offset > 0 ? `+${timezone.offset}`
             : timezone.offset
         }} -->
-        {{ offset }}
+          {{ offset }}
+        </div>
+      </div>
+      <div flex="~ col" text-left flex-auto w-30>
+        <div>
+          {{ city }}
+          <sup border="~ base rounded" px1>{{ timezone.abbr }}</sup>
+        </div>
+        <div text-sm op50 leading-1em>
+          {{ state }}
+        </div>
+      </div>
+      <div tabular-nums ma text-sm w-20 text-right>
+        {{ time }}
       </div>
     </div>
-    <div flex="~ col" text-left flex-auto>
-      <div>
-        {{ city }}
-        <sup border="~ base rounded" px1>{{ timezone.abbr }}</sup>
-      </div>
-      <div text-sm op50 leading-1em>
-        {{ state }}
-      </div>
-    </div>
-    <div ma tabular-nums>
-      {{ time }}
-    </div>
+
     <slot />
   </div>
 </template>
