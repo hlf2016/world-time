@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div of-x-auto relative>
+  <div relative of-x-auto>
     <div v-for="zone, idx in zones" :key="zone.name" px4 py2 border="b base" relative>
-      <TimezoneItem :timezone="zone" w-max>
+      <TimezoneItem :timezone="zone" w-max pr3>
         <TimeDial :timezone="zone" />
       </TimezoneItem>
       <div absolute top-0 bottom-0 left--6 text-xl flex="~ col" justify-center>
@@ -18,6 +18,6 @@
           @click="moveZone(zone, 1)" />
       </div>
     </div>
-    <SelectionOverlay absolute inset-0 />
+    <!-- <SelectionOverlay absolute inset-0 /> -->
   </div>
 </template>

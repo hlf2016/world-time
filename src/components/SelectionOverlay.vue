@@ -1,5 +1,5 @@
 <script setup lang="ts">
-let leftEdge = $ref(40)
+let leftEdge = $ref(0)
 let rightEdge = $ref(100)
 const top = $ref(0)
 const bottom = $ref(0)
